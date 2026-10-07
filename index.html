@@ -1,0 +1,2496 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>مسابقة المسلم</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #061a15,
+        #0b3024,
+        #12503a
+    );
+
+    color:white;
+
+    min-height:100vh;
+}
+
+
+/* HEADER */
+
+header{
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    background:
+    rgba(0,0,0,.25);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.12);
+
+}
+
+header h1{
+
+    color:#f5d77a;
+
+    font-size:32px;
+
+}
+
+header p{
+
+    color:#cfe2d9;
+
+    margin-top:8px;
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+    width:
+    min(950px,92%);
+
+    margin:
+    30px auto;
+
+}
+
+
+/* CARD */
+
+.card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.25);
+
+    backdrop-filter:
+    blur(8px);
+
+}
+
+
+.center{
+
+    text-align:center;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* HOME */
+
+.hero{
+
+    text-align:center;
+
+    padding:
+    45px 20px;
+
+}
+
+.hero-icon{
+
+    font-size:70px;
+
+}
+
+.hero h2{
+
+    color:#f5d77a;
+
+    margin:
+    15px 0;
+
+    font-size:29px;
+
+}
+
+.hero p{
+
+    line-height:1.9;
+
+    color:#d4e7df;
+
+}
+
+
+/* INPUT */
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:
+    8px 0 15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+textarea{
+
+    min-height:110px;
+
+    resize:vertical;
+
+}
+
+
+/* BUTTON */
+
+button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:
+    13px 20px;
+
+    margin:5px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+/* BUTTON COLORS */
+
+.primary{
+
+    background:#f5d77a;
+
+    color:#17352b;
+
+}
+
+.green{
+
+    background:#1fa76e;
+
+    color:white;
+
+}
+
+.red{
+
+    background:#d94b4b;
+
+    color:white;
+
+}
+
+.blue{
+
+    background:#3479d7;
+
+    color:white;
+
+}
+
+.dark{
+
+    background:#172d25;
+
+    color:white;
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+}
+
+
+/* NOTICE */
+
+.notice{
+
+    padding:15px;
+
+    margin:
+    15px 0;
+
+    border-radius:12px;
+
+    background:
+    rgba(245,215,122,.10);
+
+    line-height:1.8;
+
+}
+
+
+/* EXAM */
+
+.timer{
+
+    text-align:center;
+
+    font-size:24px;
+
+    color:#f5d77a;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.progress{
+
+    height:10px;
+
+    background:#17372c;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:#f5d77a;
+
+}
+
+.question-number{
+
+    color:#f5d77a;
+
+    font-weight:bold;
+
+}
+
+.question{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    margin:
+    20px 0;
+
+}
+
+.option{
+
+    display:block;
+
+    width:100%;
+
+    text-align:right;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:white;
+
+    border:
+    1px solid
+    rgba(255,255,255,.15);
+
+    margin:
+    10px 0;
+
+}
+
+
+/* RESULT */
+
+.result-score{
+
+    color:#f5d77a;
+
+    font-size:55px;
+
+    font-weight:bold;
+
+    margin:
+    20px 0;
+
+}
+
+
+/* ADMIN */
+
+.admin-title{
+
+    color:#f5d77a;
+
+    margin-bottom:20px;
+
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(150px,1fr)
+    );
+
+    gap:12px;
+
+}
+
+.stat{
+
+    background:
+    rgba(255,255,255,.07);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.stat strong{
+
+    display:block;
+
+    color:#f5d77a;
+
+    font-size:30px;
+
+    margin-bottom:7px;
+
+}
+
+
+/* QUESTIONS */
+
+.question-box{
+
+    background:
+    rgba(0,0,0,.18);
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin:
+    12px 0;
+
+    line-height:1.9;
+
+}
+
+.question-box small{
+
+    color:#c7ddd5;
+
+}
+
+
+/* TABLE */
+
+.table-container{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:
+    collapse;
+
+}
+
+th,
+td{
+
+    padding:12px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.1);
+
+    text-align:center;
+
+}
+
+th{
+
+    color:#f5d77a;
+
+}
+
+
+/* EMPTY */
+
+.empty{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#c6ddd4;
+
+}
+
+
+/* CERTIFICATE */
+
+.certificate{
+
+    background:white;
+
+    color:#222;
+
+    border:
+    8px double
+    #b68b20;
+
+    border-radius:15px;
+
+    padding:
+    40px 20px;
+
+    text-align:center;
+
+}
+
+.certificate h2{
+
+    color:#145d43;
+
+    font-size:32px;
+
+    margin:15px;
+
+}
+
+.certificate-name{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin:
+    25px 0;
+
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-box{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.whatsapp-button{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#1fa76e;
+
+    color:white;
+
+    padding:
+    13px 20px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+}
+
+
+/* PASSWORD */
+
+.password-wrapper{
+
+    position:relative;
+
+}
+
+.password-wrapper input{
+
+    padding-left:60px;
+
+}
+
+.show-password{
+
+    position:absolute;
+
+    left:5px;
+
+    top:5px;
+
+    margin:0;
+
+    padding:
+    9px 12px;
+
+    background:#172d25;
+
+    color:white;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#9ebcb0;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+
+        font-size:25px;
+
+    }
+
+    .hero h2{
+
+        font-size:24px;
+
+    }
+
+    .question{
+
+        font-size:19px;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h1 id="siteTitle">
+🕌 مسابقة المسلم
+</h1>
+
+<p id="siteSubtitle">
+اختبر معلوماتك الدينية
+</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- ================= HOME ================= -->
+
+<section
+id="homePage"
+class="card hero"
+>
+
+<div class="hero-icon">
+🕌
+</div>
+
+<h2>
+مرحبًا بك في مسابقة المسلم
+</h2>
+
+<p id="welcomeText">
+اكتب اسمك وابدأ الامتحان.
+</p>
+
+<div class="notice">
+
+📌 الأسئلة يتم إضافتها بواسطة صاحب الموقع فقط.
+
+</div>
+
+<input
+id="visitorName"
+type="text"
+placeholder="اكتب اسمك هنا"
+>
+
+<button
+class="primary"
+onclick="startExam()"
+>
+
+🚀 ابدأ الامتحان
+
+</button>
+
+<br>
+
+<button
+class="dark"
+onclick="showAdminLogin()"
+>
+
+👑 دخول صاحب الموقع
+
+</button>
+
+</section>
+
+
+
+<!-- ================= ADMIN LOGIN ================= -->
+
+<section
+id="adminLoginPage"
+class="card hidden"
+>
+
+<h2 class="admin-title">
+
+👑 دخول صاحب الموقع
+
+</h2>
+
+<p
+style="
+color:#cfe2d9;
+margin-bottom:20px;
+"
+>
+
+هذه الصفحة مخصصة لصاحب الموقع فقط.
+
+</p>
+
+
+<label>
+اسم المستخدم
+</label>
+
+<input
+id="adminUsername"
+type="text"
+autocomplete="username"
+placeholder="اكتب اسم المستخدم"
+>
+
+
+<label>
+كلمة المرور
+</label>
+
+<div class="password-wrapper">
+
+<input
+id="adminPassword"
+type="password"
+autocomplete="current-password"
+placeholder="اكتب كلمة المرور"
+>
+
+<button
+id="showPasswordBtn"
+class="show-password"
+type="button"
+onclick="togglePassword()"
+>
+
+👁️
+
+</button>
+
+</div>
+
+
+<button
+class="primary"
+onclick="adminLogin()"
+>
+
+🔐 دخول لوحة التحكم
+
+</button>
+
+
+<button
+class="dark"
+onclick="backHome()"
+>
+
+↩️ رجوع
+
+</button>
+
+</section>
+
+
+
+<!-- ================= EXAM ================= -->
+
+<section
+id="examPage"
+class="card hidden"
+>
+
+<div class="timer">
+
+⏱️ الوقت:
+
+<span id="timer">
+60
+</span>
+
+ثانية
+
+</div>
+
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar"
+></div>
+
+</div>
+
+
+<div
+id="questionNumber"
+class="question-number"
+></div>
+
+
+<div
+id="questionText"
+class="question"
+></div>
+
+
+<div id="options"></div>
+
+</section>
+
+
+
+<!-- ================= RESULT ================= -->
+
+<section
+id="resultPage"
+class="card center hidden"
+>
+
+<h2>
+🎉 انتهى الامتحان
+</h2>
+
+<br>
+
+<p id="resultName"></p>
+
+
+<div class="result-score">
+
+<span id="score"></span>
+
+</div>
+
+
+<p id="resultMessage"></p>
+
+
+<br>
+
+
+<button
+class="primary"
+onclick="showCertificate()"
+>
+
+📜 شهادة تقدير
+
+</button>
+
+
+<button
+class="green"
+onclick="shareResult()"
+>
+
+📤 مشاركة النتيجة
+
+</button>
+
+
+<br>
+
+
+<button
+class="dark"
+onclick="backHome()"
+>
+
+🏠 امتحان جديد
+
+</button>
+
+</section>
+
+
+
+<!-- ================= CERTIFICATE ================= -->
+
+<section
+id="certificatePage"
+class="card hidden"
+>
+
+<div class="certificate">
+
+<div style="font-size:55px">
+🕌
+</div>
+
+<h2>
+شهادة تقدير
+</h2>
+
+<p>
+تشهد إدارة مسابقة المسلم بأن
+</p>
+
+
+<div
+id="certificateName"
+class="certificate-name"
+></div>
+
+
+<p>
+قد شارك في المسابقة الدينية
+وحصل على النتيجة التالية:
+</p>
+
+
+<div
+id="certificateScore"
+class="result-score"
+style="font-size:40px"
+></div>
+
+
+<p>
+مع تمنياتنا له بالتوفيق والنجاح.
+</p>
+
+</div>
+
+
+<div class="center">
+
+<button
+class="green"
+onclick="printCertificate()"
+>
+
+🖨️ حفظ / طباعة الشهادة
+
+</button>
+
+
+<button
+class="dark"
+onclick="backHome()"
+>
+
+🏠 الرئيسية
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ADMIN ================= -->
+
+<section
+id="adminPage"
+class="hidden"
+>
+
+
+<!-- STATS -->
+
+<div class="card">
+
+<h2 class="admin-title">
+
+👑 لوحة تحكم صاحب الموقع
+
+</h2>
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<strong id="questionsCount">
+0
+</strong>
+
+عدد الأسئلة
+
+</div>
+
+
+<div class="stat">
+
+<strong id="resultsCount">
+0
+</strong>
+
+عدد المشاركين
+
+</div>
+
+
+<div class="stat">
+
+<strong id="topScore">
+0
+</strong>
+
+أعلى درجة
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- SETTINGS -->
+
+<div class="card">
+
+<h2 class="admin-title">
+
+⚙️ إعدادات الموقع
+
+</h2>
+
+
+<label>
+اسم الموقع
+</label>
+
+<input
+id="siteNameInput"
+>
+
+
+<label>
+رسالة الترحيب
+</label>
+
+<textarea
+id="welcomeInput"
+></textarea>
+
+
+<button
+class="green"
+onclick="saveSettings()"
+>
+
+💾 حفظ الإعدادات
+
+</button>
+
+</div>
+
+
+
+<!-- ADD QUESTION -->
+
+<div class="card">
+
+<h2 class="admin-title">
+
+➕ إضافة سؤال جديد
+
+</h2>
+
+
+<label>
+السؤال
+</label>
+
+<textarea
+id="newQuestion"
+placeholder="اكتب السؤال هنا"
+></textarea>
+
+
+<label>
+الإجابة الأولى
+</label>
+
+<input
+id="option1"
+placeholder="الإجابة الأولى"
+>
+
+
+<label>
+الإجابة الثانية
+</label>
+
+<input
+id="option2"
+placeholder="الإجابة الثانية"
+>
+
+
+<label>
+الإجابة الثالثة
+</label>
+
+<input
+id="option3"
+placeholder="الإجابة الثالثة"
+>
+
+
+<label>
+الإجابة الرابعة
+</label>
+
+<input
+id="option4"
+placeholder="الإجابة الرابعة"
+>
+
+
+<label>
+الإجابة الصحيحة
+</label>
+
+<select id="correctAnswer">
+
+<option value="0">
+الإجابة الأولى
+</option>
+
+<option value="1">
+الإجابة الثانية
+</option>
+
+<option value="2">
+الإجابة الثالثة
+</option>
+
+<option value="3">
+الإجابة الرابعة
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="addQuestion()"
+>
+
+➕ إضافة السؤال
+
+</button>
+
+</div>
+
+
+
+<!-- QUESTION LIST -->
+
+<div class="card">
+
+<h2 class="admin-title">
+
+📚 إدارة الأسئلة
+
+</h2>
+
+
+<div id="questionsList"></div>
+
+</div>
+
+
+
+<!-- RESULTS -->
+
+<div class="card">
+
+<h2 class="admin-title">
+
+📊 نتائج المشاركين
+
+</h2>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+الاسم
+</th>
+
+<th>
+الدرجة
+</th>
+
+<th>
+التاريخ
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="resultsTable"></tbody>
+
+</table>
+
+</div>
+
+
+<button
+class="red"
+onclick="clearResults()"
+>
+
+🗑️ حذف جميع النتائج
+
+</button>
+
+</div>
+
+
+
+<!-- WHATSAPP -->
+
+<div class="card center">
+
+<h2 class="admin-title">
+
+📱 تواصل معنا
+
+</h2>
+
+<p
+style="
+color:#cfe2d9;
+margin-bottom:10px;
+"
+>
+
+للتواصل عبر واتساب:
+
+</p>
+
+
+<div class="whatsapp-box">
+
+
+<a
+class="whatsapp-button"
+href="https://wa.me/201225320285"
+target="_blank"
+>
+
+💬 واتساب
+<br>
+01225320285
+
+</a>
+
+
+<a
+class="whatsapp-button"
+href="https://wa.me/201225320419"
+target="_blank"
+>
+
+💬 واتساب
+<br>
+01225320419
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- LOGOUT -->
+
+<div class="card center">
+
+<button
+class="dark"
+onclick="logoutAdmin()"
+>
+
+🚪 تسجيل خروج صاحب الموقع
+
+</button>
+
+</div>
+
+
+</section>
+
+</div>
+
+
+
+<footer>
+
+© 2026 مسابقة المسلم 🕌
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================
+   البيانات
+========================================= */
+
+
+/*
+   الموقع يبدأ بدون أي أسئلة.
+*/
+
+let questions =
+JSON.parse(
+localStorage.getItem("questions")
+) || [];
+
+
+let results =
+JSON.parse(
+localStorage.getItem("results")
+) || [];
+
+
+let settings =
+JSON.parse(
+localStorage.getItem("settings")
+) || {
+
+siteName:
+"مسابقة المسلم",
+
+welcome:
+"اكتب اسمك وابدأ الامتحان."
+
+};
+
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let visitorName = "";
+
+let timer = 60;
+
+let timerInterval;
+
+
+/* =========================================
+   إخفاء كل الصفحات
+========================================= */
+
+function hideAll(){
+
+document
+.getElementById("homePage")
+.classList.add("hidden");
+
+document
+.getElementById("adminLoginPage")
+.classList.add("hidden");
+
+document
+.getElementById("examPage")
+.classList.add("hidden");
+
+document
+.getElementById("resultPage")
+.classList.add("hidden");
+
+document
+.getElementById("certificatePage")
+.classList.add("hidden");
+
+document
+.getElementById("adminPage")
+.classList.add("hidden");
+
+}
+
+
+/* =========================================
+   الرجوع للرئيسية
+========================================= */
+
+function backHome(){
+
+clearInterval(timerInterval);
+
+hideAll();
+
+document
+.getElementById("homePage")
+.classList.remove("hidden");
+
+}
+
+
+/* =========================================
+   بدء الامتحان
+========================================= */
+
+function startExam(){
+
+visitorName =
+document
+.getElementById("visitorName")
+.value
+.trim();
+
+
+if(!visitorName){
+
+alert(
+"من فضلك اكتب اسمك أولاً."
+);
+
+return;
+
+}
+
+
+/* الموقع فاضي */
+
+if(questions.length === 0){
+
+alert(
+"لا توجد أسئلة حاليًا. صاحب الموقع سيضيف الأسئلة من لوحة التحكم."
+);
+
+return;
+
+}
+
+
+currentQuestion = 0;
+
+score = 0;
+
+hideAll();
+
+document
+.getElementById("examPage")
+.classList.remove("hidden");
+
+showQuestion();
+
+}
+
+
+/* =========================================
+   عرض السؤال
+========================================= */
+
+function showQuestion(){
+
+clearInterval(timerInterval);
+
+timer = 60;
+
+document
+.getElementById("timer")
+.textContent = timer;
+
+
+timerInterval =
+setInterval(function(){
+
+timer--;
+
+document
+.getElementById("timer")
+.textContent = timer;
+
+
+if(timer <= 0){
+
+clearInterval(timerInterval);
+
+nextQuestion(-1);
+
+}
+
+},1000);
+
+
+let q =
+questions[currentQuestion];
+
+
+document
+.getElementById("questionNumber")
+.textContent =
+"السؤال " +
+(currentQuestion + 1) +
+" من " +
+questions.length;
+
+
+document
+.getElementById("questionText")
+.textContent =
+q.question;
+
+
+let html = "";
+
+
+q.options.forEach(
+function(option,index){
+
+html += `
+
+<button
+class="option"
+onclick="nextQuestion(${index})"
+>
+
+${index + 1} - ${option}
+
+</button>
+
+`;
+
+});
+
+
+document
+.getElementById("options")
+.innerHTML =
+html;
+
+
+let progress =
+(currentQuestion /
+questions.length) *
+100;
+
+
+document
+.getElementById("progressBar")
+.style.width =
+progress + "%";
+
+}
+
+
+/* =========================================
+   السؤال التالي
+========================================= */
+
+function nextQuestion(answer){
+
+clearInterval(timerInterval);
+
+let q =
+questions[currentQuestion];
+
+
+if(answer === q.correct){
+
+score++;
+
+}
+
+
+currentQuestion++;
+
+
+if(
+currentQuestion >=
+questions.length
+){
+
+finishExam();
+
+}
+
+else{
+
+showQuestion();
+
+}
+
+}
+
+
+/* =========================================
+   إنهاء الامتحان
+========================================= */
+
+function finishExam(){
+
+clearInterval(timerInterval);
+
+
+let result = {
+
+name:visitorName,
+
+score:score,
+
+total:questions.length,
+
+date:
+new Date()
+.toLocaleString("ar-EG")
+
+};
+
+
+results.push(result);
+
+
+localStorage.setItem(
+"results",
+JSON.stringify(results)
+);
+
+
+hideAll();
+
+
+document
+.getElementById("resultPage")
+.classList.remove("hidden");
+
+
+document
+.getElementById("resultName")
+.textContent =
+"الاسم: " +
+visitorName;
+
+
+document
+.getElementById("score")
+.textContent =
+score +
+" / " +
+questions.length;
+
+
+let percentage =
+(score / questions.length) *
+100;
+
+
+if(percentage >= 80){
+
+document
+.getElementById("resultMessage")
+.textContent =
+"🏆 ممتاز! نتيجة رائعة.";
+
+}
+
+else if(percentage >= 50){
+
+document
+.getElementById("resultMessage")
+.textContent =
+"👏 جيد جدًا، استمر في التعلم.";
+
+}
+
+else{
+
+document
+.getElementById("resultMessage")
+.textContent =
+"📖 حاول مرة أخرى وراجع معلوماتك.";
+
+}
+
+}
+
+
+/* =========================================
+   الشهادة
+========================================= */
+
+function showCertificate(){
+
+hideAll();
+
+
+document
+.getElementById("certificatePage")
+.classList.remove("hidden");
+
+
+document
+.getElementById("certificateName")
+.textContent =
+visitorName;
+
+
+document
+.getElementById("certificateScore")
+.textContent =
+score +
+" / " +
+questions.length;
+
+}
+
+
+function printCertificate(){
+
+window.print();
+
+}
+
+
+/* =========================================
+   مشاركة النتيجة
+========================================= */
+
+async function shareResult(){
+
+let text =
+"🕌 مسابقة المسلم\n" +
+"الاسم: " +
+visitorName +
+"\nالنتيجة: " +
+score +
+" / " +
+questions.length;
+
+
+if(navigator.share){
+
+try{
+
+await navigator.share({
+
+title:
+"نتيجتي في مسابقة المسلم",
+
+text:text
+
+});
+
+}
+
+catch(error){}
+
+}
+
+else{
+
+try{
+
+await navigator.clipboard
+.writeText(text);
+
+alert(
+"تم نسخ النتيجة."
+);
+
+}
+
+catch(error){
+
+alert(text);
+
+}
+
+}
+
+}
+
+
+/* =========================================
+   دخول صاحب الموقع
+========================================= */
+
+function showAdminLogin(){
+
+hideAll();
+
+
+document
+.getElementById("adminLoginPage")
+.classList.remove("hidden");
+
+}
+
+
+/* إظهار / إخفاء كلمة المرور */
+
+function togglePassword(){
+
+let password =
+document
+.getElementById("adminPassword");
+
+
+let button =
+document
+.getElementById("showPasswordBtn");
+
+
+if(
+password.type ===
+"password"
+){
+
+password.type =
+"text";
+
+button.textContent =
+"🙈";
+
+}
+
+else{
+
+password.type =
+"password";
+
+button.textContent =
+"👁️";
+
+}
+
+}
+
+
+/* تسجيل الدخول */
+
+function adminLogin(){
+
+let username =
+document
+.getElementById("adminUsername")
+.value
+.trim();
+
+
+let password =
+document
+.getElementById("adminPassword")
+.value;
+
+
+if(
+username === "admin" &&
+password === "123456"
+){
+
+localStorage.setItem(
+"adminLogged",
+"yes"
+);
+
+openAdmin();
+
+}
+
+else{
+
+alert(
+"اسم المستخدم أو كلمة المرور غير صحيحة."
+);
+
+}
+
+}
+
+
+/* =========================================
+   لوحة التحكم
+========================================= */
+
+function openAdmin(){
+
+hideAll();
+
+
+document
+.getElementById("adminPage")
+.classList.remove("hidden");
+
+
+document
+.getElementById("siteNameInput")
+.value =
+settings.siteName;
+
+
+document
+.getElementById("welcomeInput")
+.value =
+settings.welcome;
+
+
+updateAdmin();
+
+}
+
+
+/* تحديث لوحة التحكم */
+
+function updateAdmin(){
+
+document
+.getElementById("questionsCount")
+.textContent =
+questions.length;
+
+
+document
+.getElementById("resultsCount")
+.textContent =
+results.length;
+
+
+let top = 0;
+
+
+results.forEach(
+function(result){
+
+if(result.score > top){
+
+top =
+result.score;
+
+}
+
+});
+
+
+document
+.getElementById("topScore")
+.textContent =
+top;
+
+
+renderQuestions();
+
+renderResults();
+
+}
+
+
+/* =========================================
+   إضافة سؤال
+========================================= */
+
+function addQuestion(){
+
+let question =
+document
+.getElementById("newQuestion")
+.value
+.trim();
+
+
+let options = [
+
+document
+.getElementById("option1")
+.value
+.trim(),
+
+document
+.getElementById("option2")
+.value
+.trim(),
+
+document
+.getElementById("option3")
+.value
+.trim(),
+
+document
+.getElementById("option4")
+.value
+.trim()
+
+];
+
+
+let correct =
+Number(
+document
+.getElementById("correctAnswer")
+.value
+);
+
+
+if(!question){
+
+alert(
+"من فضلك اكتب السؤال."
+);
+
+return;
+
+}
+
+
+if(
+options.some(
+function(option){
+
+return option === "";
+
+})
+){
+
+alert(
+"من فضلك اكتب جميع الاختيارات."
+);
+
+return;
+
+}
+
+
+questions.push({
+
+question:
+question,
+
+options:
+options,
+
+correct:
+correct
+
+});
+
+
+localStorage.setItem(
+"questions",
+JSON.stringify(questions)
+);
+
+
+/* تفريغ الخانات */
+
+document
+.getElementById("newQuestion")
+.value = "";
+
+document
+.getElementById("option1")
+.value = "";
+
+document
+.getElementById("option2")
+.value = "";
+
+document
+.getElementById("option3")
+.value = "";
+
+document
+.getElementById("option4")
+.value = "";
+
+
+updateAdmin();
+
+
+alert(
+"تمت إضافة السؤال بنجاح ✅"
+);
+
+}
+
+
+/* =========================================
+   عرض الأسئلة
+========================================= */
+
+function renderQuestions(){
+
+let box =
+document
+.getElementById("questionsList");
+
+
+box.innerHTML = "";
+
+
+if(
+questions.length === 0
+){
+
+box.innerHTML = `
+
+<div class="empty">
+
+📭 لا توجد أسئلة حتى الآن.
+
+<br><br>
+
+استخدم نموذج إضافة سؤال لإضافة أول سؤال.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+questions.forEach(
+function(q,index){
+
+let div =
+document
+.createElement("div");
+
+
+div.className =
+"question-box";
+
+
+div.innerHTML = `
+
+<b>
+
+${index + 1}.
+${q.question}
+
+</b>
+
+<br><br>
+
+<small>
+
+1️⃣ ${q.options[0]}
+<br>
+
+2️⃣ ${q.options[1]}
+<br>
+
+3️⃣ ${q.options[2]}
+<br>
+
+4️⃣ ${q.options[3]}
+
+<br><br>
+
+✅ الإجابة الصحيحة:
+${q.options[q.correct]}
+
+</small>
+
+<br><br>
+
+<button
+class="red"
+onclick="deleteQuestion(${index})"
+>
+
+🗑️ حذف السؤال
+
+</button>
+
+`;
+
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/* =========================================
+   حذف سؤال
+========================================= */
+
+function deleteQuestion(index){
+
+if(
+confirm(
+"هل تريد حذف هذا السؤال؟"
+)
+){
+
+questions.splice(
+index,
+1
+);
+
+
+localStorage.setItem(
+"questions",
+JSON.stringify(questions)
+);
+
+
+updateAdmin();
+
+}
+
+}
+
+
+/* =========================================
+   النتائج
+========================================= */
+
+function renderResults(){
+
+let table =
+document
+.getElementById("resultsTable");
+
+
+table.innerHTML = "";
+
+
+if(
+results.length === 0
+){
+
+table.innerHTML = `
+
+<tr>
+
+<td colspan="3">
+
+لا توجد نتائج حتى الآن.
+
+</td>
+
+</tr>
+
+`;
+
+return;
+
+}
+
+
+results.forEach(
+function(result){
+
+table.innerHTML += `
+
+<tr>
+
+<td>
+${result.name}
+</td>
+
+<td>
+${result.score}
+/
+${result.total}
+</td>
+
+<td>
+${result.date}
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+
+/* حذف النتائج */
+
+function clearResults(){
+
+if(
+confirm(
+"هل تريد حذف جميع النتائج؟"
+)
+){
+
+results = [];
+
+
+localStorage.setItem(
+"results",
+JSON.stringify(results)
+);
+
+
+updateAdmin();
+
+}
+
+}
+
+
+/* =========================================
+   إعدادات الموقع
+========================================= */
+
+function saveSettings(){
+
+settings.siteName =
+document
+.getElementById("siteNameInput")
+.value
+.trim();
+
+
+settings.welcome =
+document
+.getElementById("welcomeInput")
+.value
+.trim();
+
+
+if(!settings.siteName){
+
+settings.siteName =
+"مسابقة المسلم";
+
+}
+
+
+localStorage.setItem(
+"settings",
+JSON.stringify(settings)
+);
+
+
+applySettings();
+
+
+alert(
+"تم حفظ الإعدادات ✅"
+);
+
+}
+
+
+/* تطبيق الإعدادات */
+
+function applySettings(){
+
+document.title =
+settings.siteName;
+
+
+document
+.getElementById("siteTitle")
+.textContent =
+"🕌 " +
+settings.siteName;
+
+
+document
+.getElementById("welcomeText")
+.textContent =
+settings.welcome;
+
+}
+
+
+/* =========================================
+   تسجيل الخروج
+========================================= */
+
+function logoutAdmin(){
+
+localStorage.removeItem(
+"adminLogged"
+);
+
+backHome();
+
+}
+
+
+/* =========================================
+   التشغيل
+========================================= */
+
+window.onload =
+function(){
+
+applySettings();
+
+};
+
+</script>
+
+
+</body>
+
+</html>
+```
